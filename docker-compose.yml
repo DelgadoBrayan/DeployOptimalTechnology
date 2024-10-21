@@ -1,11 +1,10 @@
-version: '1'
+version: '3.8'  # Cambiado a una versión más reciente de docker-compose
 
 services:
   backend:
-    image: node:20
     build:
-      context: ./backend
-      dockerfile: ./backend/Dockerfile
+      context: ./Back_End  # Asegúrate de que el nombre de la carpeta coincide con tu proyecto (Back_End)
+      dockerfile: ./dockerfile  # El Dockerfile está dentro de la carpeta Back_End
     ports:
       - "3000:3000"
     environment:
@@ -14,10 +13,9 @@ services:
       - app-network
 
   frontend:
-    image: node:20
     build:
-      context: ./frontend
-      dockerfile: ./frontend/Dockerfile
+      context: ./Front_End  # Asegúrate de que el nombre de la carpeta coincide con tu proyecto (Front_End)
+      dockerfile: ./dockerfile  # El Dockerfile está dentro de la carpeta Front_End
     ports:
       - "5173:5173"
     environment:
@@ -30,3 +28,4 @@ services:
 networks:
   app-network:
     driver: bridge
+
