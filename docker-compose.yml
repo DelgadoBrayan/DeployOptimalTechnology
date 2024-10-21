@@ -5,6 +5,7 @@ services:
     image: node:20
     build:
       context: https://github.com/DelgadoBrayan/Back_End_Optimal_Technology.git
+      dockerfile: ./backend/dockerfile
     ports:
       - "3000:3000"
     environment:
@@ -15,7 +16,8 @@ services:
   frontend:
     image: node:20
     build:
-      context: https://github.com/DelgadoBrayan/Front_End_Optimal_Technology.gitÑ
+      context: https://github.com/DelgadoBrayan/Front_End_Optimal_Technology.git
+      dockerfile: ./frontend/dockerfile
     ports:
       - "5173:5173"
     environment:
