@@ -1,0 +1,30 @@
+version: '1'
+
+services:
+  backend:
+    image: node:20
+    build:
+      context: https://github.com/DelgadoBrayan/Back_End_Optimal_Technology.git
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+  frontend:
+    image: node:20
+    build:
+      context: https://github.com/DelgadoBrayan/Front_End_Optimal_Technology.gitÑ
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
