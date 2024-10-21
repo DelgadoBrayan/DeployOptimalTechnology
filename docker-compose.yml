@@ -4,7 +4,7 @@ services:
   backend:
     build:
       context: ./Back_End  # Asegúrate de que el nombre de la carpeta coincide con tu proyecto (Back_End)
-      dockerfile: ./dockerfile  # El Dockerfile está dentro de la carpeta Back_End
+      dockerfile: ./Dockerfile  # El Dockerfile está dentro de la carpeta Back_End
     ports:
       - "3000:3000"
     environment:
@@ -15,7 +15,7 @@ services:
   frontend:
     build:
       context: ./Front_End  # Asegúrate de que el nombre de la carpeta coincide con tu proyecto (Front_End)
-      dockerfile: ./dockerfile  # El Dockerfile está dentro de la carpeta Front_End
+      dockerfile: ./Dockerfile  # El Dockerfile está dentro de la carpeta Front_End
     ports:
       - "5173:5173"
     environment:
